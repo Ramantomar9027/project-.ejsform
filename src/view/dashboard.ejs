@@ -1,0 +1,17 @@
+<h2>Dashboard</h2>
+
+<a href="/logout">Logout</a>
+
+<form method="POST" action="/add">
+  <input name="text" placeholder="New Todo" required />
+  <button>Add</button>
+</form>
+
+<ul>
+  <% todos.forEach(todo => { %>
+    <li>
+      <%= todo.text %>
+      <a href="/delete/<%= todo._id %>">❌</a>
+    </li>
+  <% }) %>
+</ul>

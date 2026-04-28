@@ -1,0 +1,21 @@
+<h2>Your Todos</h2>
+	<form method="POST"action="/todos/add">
+	<input name="title"placeholder="New Todo" required/>
+	<button>Add</button>
+</form>
+
+<ul>
+  <% todos.forEach(todo => { %>
+<li>
+<formmethod="POST"action="/todos/toggle/<%= todo._id %>">
+<button><%= todo.completed ? "✅" : "❌" %></button>
+</form>
+	<%= todo.title %>
+	<form method="POST"action="/todos/delete/<%= todo._id %>">
+	<button>Delete</button>
+</form>
+</li>
+  <% }) %>
+</ul>
+
+<ahref="/logout">Logout</a>
